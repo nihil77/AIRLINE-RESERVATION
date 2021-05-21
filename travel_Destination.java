@@ -505,7 +505,7 @@ public class travel_Destination extends JFrame{
     this.setSize(790,500);  
     this.setVisible(true); 
     this.setIconImage(image1.getImage());
-    this.setTitle("International Type");
+    this.setTitle("Local");
    // this.setResizable(false);
 	    	
 	    }
