@@ -174,7 +174,7 @@ public class travel_Destination2 extends JFrame{
 	   
 	    this.setVisible(true); 
 	    this.setIconImage(image1.getImage());
-	    this.setTitle("International Type");
+	    this.setTitle("International");
 	    this.setResizable(false);
 	    
 
