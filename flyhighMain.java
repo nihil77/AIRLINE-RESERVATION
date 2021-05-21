@@ -53,11 +53,12 @@ public class flyhighMain extends JFrame{
 	button.setForeground(new Color(0,0,0));
 	button.addActionListener(new ActionListener() {
 		
-		String[] buttons = {"Yes","No"};
+		int[] button = {0 , 1};
+		
 		
 		public void actionPerformed(ActionEvent e ) {
 			
-		int c = JOptionPane.showOptionDialog(null, "Are you sure", "Booking", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+		int c = JOptionPane.showOptionDialog(null, "Click (Yes) to Confirm", "Booking", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
 			if (c == 0) {
 				new travel_Type();
 				
