@@ -1,16 +1,27 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
+
 public class travel_Destination2 extends JFrame{
 	
 	ImageIcon image1 = new ImageIcon("sra.png");
+	
 	
 	 travel_Destination2() {    
 	      
@@ -28,37 +39,146 @@ public class travel_Destination2 extends JFrame{
 	    jt.setBounds(30,40,200,300);          
 	    JScrollPane sp=new JScrollPane(jt);    
 	    
+	    //Start
+	    JLabel lbl = new JLabel("Passenger's Details ");
+	    lbl.setBounds(30,100,200,100);
+	    lbl.setForeground(Color.BLACK);
+	    lbl.setFont(new Font("VERDANA",Font.BOLD,17));
+	    this.add(lbl);
+	    //END
+	 
+	    
 	    
 	    //LABEL NAME
-	    JLabel lbl1 = new JLabel("Name: ");
-	    lbl1.setBounds(30,160,90,100);
+	    JLabel lbl1 = new JLabel("Name    : ");
+	    lbl1.setBounds(30,220,90,100);
 	    lbl1.setForeground(Color.BLACK);
-	    lbl1.setFont(new Font("VERDANA",Font.BOLD,17));
+	    lbl1.setFont(new Font("VERDANA",Font.PLAIN,12));
 	    this.add(lbl1);
 	    
 	    JTextField txt1 = new JTextField();
-	    txt1.setBounds(100,195,190,30);
+	    txt1.setBounds(100,255,190,30);
 	    this.add(txt1);
+	    
+	   
+	    
 	    // END NAME
 	    
-	    JLabel lbl2 = new JLabel("Age: ");
-	    lbl2.setBounds(30,205,90,100);
+	    JLabel lbl2 = new JLabel("Age      : ");
+	    lbl2.setBounds(30,265,90,100);
 	    lbl2.setForeground(Color.BLACK);
-	    lbl2.setFont(new Font("VERDANA",Font.BOLD,17));
+	    lbl2.setFont(new Font("VERDANA",Font.PLAIN,12));
 	    this.add(lbl2);
 	    
 	    JTextField txt2 = new JTextField();
-	    txt2.setBounds(100,240,190,30);
+	    txt2.setBounds(100,300,70,30);
 	    this.add(txt2);
 	    
+	   
+	  
+		   //From start
+		    JLabel lbl3 = new JLabel("From      : ");
+		    lbl3.setBounds(30,160,90,100);
+		    lbl3.setForeground(Color.BLACK);
+		    lbl3.setFont(new Font("VERDANA",Font.PLAIN,12));
+		    this.add(lbl3);
+		    
+		    String country[]={"South Korea","Japan","Vietnam"};        
+		    JComboBox cb = new JComboBox(country);    
+		    cb.setBounds(100,198,100,30);    
+		    this.add(cb);
+		    //From end
+		    
+		    
+		    //Start TO
+		    JLabel lbl4 = new JLabel("To       : ");
+		    lbl4.setBounds(440,160,90,100);
+		    lbl4.setForeground(Color.BLACK);
+		    lbl4.setFont(new Font("VERDANA",Font.PLAIN,12));
+		    this.add(lbl4);
+		    
+		    String to[]={"Manila","Japan","Vietnam"};        
+		    JComboBox cb1 = new JComboBox(to);    
+		    cb1.setBounds(520,198,100,30);    
+		    this.add(cb1);
+		    // END To
+		    
+		    
+		    // START NUMBER_PASS
+		    JLabel lbl5 = new JLabel("Number of Passenger  :  ");
+		    lbl5.setBounds(440,220,200,100);
+		    lbl5.setForeground(Color.BLACK);
+		    lbl5.setFont(new Font("VERDANA",Font.PLAIN,12));
+		    this.add(lbl5);
+	   
+		    JTextField txt3 = new JTextField();
+		    txt3.setBounds(600,255,70,30);
+		    this.add(txt3);	
+		    //END NUMBER_PASS
+	    
+	    
+	    
+		    JLabel lbl6 = new JLabel("Flight type               :  ");
+		    lbl6.setBounds(440,265,200,100);
+		    lbl6.setForeground(Color.BLACK);
+		    lbl6.setFont(new Font("VERDANA",Font.PLAIN,12));
+		    this.add(lbl6);
+	    
+		    String flight[]={"Private Class","Business Class","Regular Class"};        
+		    JComboBox cb2 = new JComboBox(flight);    
+		    cb2.setBounds(600,300,130,30);    
+		    this.add(cb2);
+		    
+		    
+		    
+		    
+		    
+		    JButton button = new JButton();
+			button.setText("Confirm");
+			button.setFocusable(false);
+			button.setFont(new Font("Comic Sans", Font.BOLD,13));
+			button.setBounds(300,390,100,50);
+			button.setBackground(new Color(58, 176, 124));
+			button.setForeground(new Color(0,0,0));
+		    this.add(button);
+		    
+			button.addActionListener(new ActionListener() {
+				
+				
+				int[] button = {0 , 1};
+				
+				public void actionPerformed(ActionEvent e ) {
+					
+				int d = JOptionPane.showOptionDialog(null, "Would you like to avail Travel Insurance", "SR Airline", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, null, null, null);
+					if (d == 0) {
+						
+						new Transaction();
+						 // dispose();
+					}
+					
+					else if (d == 1) {
+						
+					}
+				}
+			});
+			
+			
+			    
 	    
 	    
 	    setBounds(300, 30, 300, 218); // THE POP UP FRAME
-	    this.add(sp);          
-	    this.setSize(800,700);   
-	    this.setVisible(true);    
+	    this.add(sp); 
+	 
+	    this.setSize(790,500);  
+
+	   
+	    this.setVisible(true); 
 	    this.setIconImage(image1.getImage());
 	    this.setTitle("International Type");
+	    this.setResizable(false);
+	    
+
 	   
+	    
 	   }
 }
