@@ -72,7 +72,7 @@ public class travel_Type extends JFrame{
 			      if(e.getSource()==button2) 
 			      {
 			    	 new travel_Destination2();
-			    	  //dispose();   
+			    	  dispose();   
 			      }
 			}
 		});
@@ -107,5 +107,7 @@ public class travel_Type extends JFrame{
 	}
 }
 
+			
+			
 			
 			
